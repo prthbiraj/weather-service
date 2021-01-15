@@ -1,11 +1,12 @@
 package com.weatherservice.weatherservice.controller;
 
-import com.weatherservice.weatherservice.model.Weather;
-import com.weatherservice.weatherservice.model.WeatherForecast;
-import com.weatherservice.weatherservice.services.WeatherService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.weatherservice.weatherservice.model.Weather;
+import com.weatherservice.weatherservice.model.WeatherForecast;
+import com.weatherservice.weatherservice.services.WeatherService;
 
 @RestController
 @RequestMapping("/api/weather")
