@@ -1,5 +1,8 @@
 package com.weatherservice.weatherservice.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,16 +15,13 @@ import com.weatherservice.weatherservice.services.WeatherService;
 @RequestMapping("/api/weather")
 public class WeatherApiController {
 
-    private final WeatherService weatherService;
-
-    public WeatherApiController(WeatherService weatherService) {
-        this.weatherService = weatherService;
-    }
-
+	@Autowired
+    private WeatherService weatherService;
+  
     @RequestMapping("/now/{country}/{city}")
-    public Weather getWeather(@PathVariable String country,
+    public ResponseEntity<Weather> getWeather(@PathVariable String country,
                               @PathVariable String city) {
-        return this.weatherService.getWeather(country, city);
+        return new ResponseEntity<>(this.weatherService.getWeather(country, city), HttpStatus.OK);
     }
 
     @RequestMapping("/tomorrow/{country}/{city}")

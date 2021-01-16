@@ -1,12 +1,15 @@
 package com.weatherservice.weatherservice;
 
 
-import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.context.SpringBootTest;
+import java.time.Duration;
 
-@RunWith(MockitoJUnitRunner.class)
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+
 @SpringBootTest
 class WeatherserviceApplicationTests {
 
@@ -14,4 +17,5 @@ class WeatherserviceApplicationTests {
 	void contextLoads() {
 	}
 
+	
 }
